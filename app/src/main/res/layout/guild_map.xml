@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.android.djs.publicbike.view.NavigationBar
+        android:id="@+id/guild_map_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title_text="路径导航" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7">
+
+            <com.supermap.android.maps.MapView
+                android:id="@+id/guild_map_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!--放大-->
+                <RelativeLayout
+                    android:id="@+id/guild_zoom_in"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/zoom">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+                        android:clickable="false"
+                        android:src="@mipmap/zoom_in" />
+                </RelativeLayout>
+
+                <!--缩小-->
+                <RelativeLayout
+                    android:id="@+id/guild_zoom_out"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="60dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/zoom"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+                        android:clickable="false"
+                        android:src="@mipmap/zoom_out" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:background="@drawable/border"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/guild_map_solution_name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:text="骑行->321路"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_margin"
+                android:background="@color/space" />
+
+            <ListView
+                android:id="@+id/guild_map_path_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

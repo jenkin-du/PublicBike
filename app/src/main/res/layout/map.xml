@@ -1,0 +1,354 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.supermap.android.maps.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--收索框-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border"
+            android:clickable="true"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:id="@+id/map_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:clickable="false"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingStart="10dp"
+                    android:text="搜索…………" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="26dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/grey" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginStart="15dp"
+                    android:clickable="false"
+                    android:contentDescription=""
+                    android:src="@mipmap/search" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--定位我的位置-->
+        <RelativeLayout
+            android:id="@+id/map_location"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="270dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/zoom"
+            android:clickable="true">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:clickable="false"
+                android:src="@mipmap/my_location" />
+        </RelativeLayout>
+
+        <!--放大-->
+        <RelativeLayout
+            android:id="@+id/map_zoom_in"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="160dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/zoom">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:clickable="false"
+                android:src="@mipmap/zoom_in" />
+        </RelativeLayout>
+
+        <!--缩小-->
+        <RelativeLayout
+            android:id="@+id/map_zoom_out"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="200dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/zoom"
+            android:clickable="true">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:clickable="false"
+                android:src="@mipmap/zoom_out" />
+        </RelativeLayout>
+
+
+        <FrameLayout
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp">
+
+            <com.android.djs.publicbike.view.LineGuildButton
+                android:id="@+id/map_line_guild"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="路线" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/map_address_panel_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/map_address_panel"
+
+            android:src="@mipmap/delete"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/map_address_panel"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/border"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/map_station_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="南邮东站"
+                android:textSize="24sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="有车总数：" />
+
+                <TextView
+                    android:id="@+id/map_bike_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:paddingLeft="5dp"
+                    android:paddingStart="5dp"
+                    android:text="30" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="有车数量：" />
+
+                <TextView
+                    android:id="@+id/map_left_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:paddingLeft="5dp"
+                    android:paddingStart="5dp"
+                    android:text="10" />
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="详细地址：" />
+
+                <TextView
+                    android:id="@+id/map_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:paddingLeft="5dp"
+                    android:paddingStart="5dp"
+                    android:text="南邮南门内" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/map_guild_go"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/btn_bg"
+                android:text="到这去" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/map_guild_panel_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/map_guild_panel"
+            android:src="@mipmap/delete"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/map_guild_panel"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/border"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/map_guild_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="南邮东站"
+                android:textSize="24sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="步行距离：" />
+
+                <TextView
+                    android:id="@+id/map_guild_distance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:paddingLeft="5dp"
+                    android:paddingStart="5dp"
+                    android:text="30" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="预计时间：" />
+
+                <TextView
+                    android:id="@+id/map_guild_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:paddingLeft="5dp"
+                    android:paddingStart="5dp"
+                    android:text="10" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</FrameLayout>

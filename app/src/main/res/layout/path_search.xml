@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/path_search_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_bg"
+    android:orientation="vertical">
+
+    <com.android.djs.publicbike.view.NavigationBar
+        android:id="@+id/path_search_navi_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title_text="路径搜索" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="起点："
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <EditText
+            android:focusable="false"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="公交站台名称"
+            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
+            android:text="我的位置"
+            android:textSize="14sp" />
+
+        <!--<ImageView-->
+        <!--android:layout_width="15dp"-->
+        <!--android:layout_height="15dp"-->
+        <!--android:layout_gravity="center_vertical"-->
+        <!--android:layout_marginEnd="5dp"-->
+        <!--android:layout_marginRight="5dp"-->
+        <!--android:src="@mipmap/delete"-->
+        <!--android:visibility="invisible" />-->
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_margin"
+        android:background="@color/space" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="终点："
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <EditText
+            android:id="@+id/path_search_condition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:hint="终点地名"
+            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/search_delete"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@mipmap/delete"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/path_search_btn"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_bg"
+            android:text="搜索" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/path_search_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:background="@color/white" />
+</LinearLayout>
